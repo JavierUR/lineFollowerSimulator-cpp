@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>779</width>
-    <height>634</height>
+    <width>798</width>
+    <height>701</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -54,37 +54,277 @@
      <string>Reset Robot Location</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="resetRouteBtn">
+   <widget class="QSplitter" name="splitter">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>100</y>
+      <width>171</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+    <widget class="QSplitter" name="splitter_4">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QSplitter" name="splitter_3">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QSlider" name="l_pow_slider">
+       <property name="minimum">
+        <number>-255</number>
+       </property>
+       <property name="maximum">
+        <number>255</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBelow</enum>
+       </property>
+       <property name="tickInterval">
+        <number>64</number>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>pow_l</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="l_pow_spin">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimum">
+        <number>-255</number>
+       </property>
+       <property name="maximum">
+        <number>255</number>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QSplitter" name="splitter_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QSlider" name="r_pow_slider">
+       <property name="minimum">
+        <number>-255</number>
+       </property>
+       <property name="maximum">
+        <number>255</number>
+       </property>
+       <property name="tracking">
+        <bool>true</bool>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksAbove</enum>
+       </property>
+       <property name="tickInterval">
+        <number>64</number>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>pow_r</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="r_pow_spin">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimum">
+        <number>-255</number>
+       </property>
+       <property name="maximum">
+        <number>255</number>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="text">
+      <string>Reset Power</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QSplitter" name="splitter_8">
     <property name="geometry">
      <rect>
       <x>580</x>
       <y>60</y>
-      <width>80</width>
-      <height>23</height>
+      <width>129</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <widget class="QPushButton" name="resetRouteBtn">
+     <property name="text">
+      <string>Reset Route</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="n_routes_spin">
+     <property name="minimum">
+      <number>4</number>
+     </property>
+     <property name="maximum">
+      <number>32</number>
+     </property>
+     <property name="value">
+      <number>16</number>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QSplitter" name="splitter_10">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>410</y>
+      <width>171</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <widget class="QSplitter" name="splitter_7">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QSplitter" name="splitter_5">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>IR_left</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="ir_left_edit"/>
+     </widget>
+     <widget class="QSplitter" name="splitter_6">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QLabel" name="label_9">
+       <property name="text">
+        <string>IR_right</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="ir_right_edit"/>
+     </widget>
+    </widget>
+    <widget class="QSplitter" name="splitter_9">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QSlider" name="verticalSlider">
+      <property name="maximum">
+       <number>50</number>
+      </property>
+      <property name="value">
+       <number>20</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>IR Height</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QCheckBox" name="checkBox">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>540</y>
+      <width>85</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>Reset Route</string>
+     <string>Automatic</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="routePointsEdit">
+   <widget class="QSplitter" name="splitter_11">
     <property name="geometry">
      <rect>
-      <x>580</x>
-      <y>90</y>
-      <width>113</width>
-      <height>23</height>
+      <x>30</x>
+      <y>540</y>
+      <width>191</width>
+      <height>24</height>
      </rect>
     </property>
-    <property name="toolTip">
-     <string>Must be Greater than 3.</string>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
     </property>
-    <property name="placeholderText">
-     <string>Number of Points</string>
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Sim. Accel</string>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="doubleSpinBox">
+     <property name="minimum">
+      <double>0.000000000000000</double>
+     </property>
+     <property name="value">
+      <double>1.000000000000000</double>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QSplitter" name="splitter_14">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>570</y>
+      <width>512</width>
+      <height>207</height>
+     </rect>
     </property>
-    <property name="clearButtonEnabled">
-     <bool>false</bool>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
     </property>
+    <widget class="QSplitter" name="splitter_12">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Serial_in</string>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="plainTextEdit"/>
+    </widget>
+    <widget class="QSplitter" name="splitter_13">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string>Serial_out</string>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="plainTextEdit_2"/>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -92,7 +332,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>779</width>
+     <width>798</width>
      <height>20</height>
     </rect>
    </property>
@@ -133,5 +373,142 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>l_pow_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>l_pow_spin</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>606</x>
+     <y>266</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>596</x>
+     <y>378</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>r_pow_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>r_pow_spin</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>684</x>
+     <y>266</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>730</x>
+     <y>378</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>l_pow_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setLeftPower(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>640</x>
+     <y>249</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>560</x>
+     <y>159</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>r_pow_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setRightPower(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>718</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>702</x>
+     <y>158</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>resetPower()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>718</x>
+     <y>427</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>717</x>
+     <y>583</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>verticalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setIRHeight(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>704</x>
+     <y>499</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>772</x>
+     <y>497</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setAuto(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>622</x>
+     <y>591</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>513</x>
+     <y>588</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setSimAccel(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>170</x>
+     <y>591</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>293</x>
+     <y>586</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>setLeftPower(int)</slot>
+  <slot>setRightPower(int)</slot>
+  <slot>resetPower()</slot>
+  <slot>setIRHeight(int)</slot>
+  <slot>setAuto(bool)</slot>
+  <slot>setSimAccel(double)</slot>
+ </slots>
 </ui>

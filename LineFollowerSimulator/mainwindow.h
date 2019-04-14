@@ -5,9 +5,13 @@
 
 #include <QGraphicsView>
 #include <QGraphicsScene>
+#include <QFileDialog>
+
+#include "utils.h"
 
 #include "route.h"
 #include "robot.h"
+
 
 namespace Ui {
 class MainWindow;
@@ -19,9 +23,11 @@ class MainWindow : public QMainWindow
 private:
     QGraphicsScene scene;
 
-    Route route;
-    Robot robot;
+    //Route route;
+    //Robot robot;
 
+    int timerId;
+    bool auto_control;
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
@@ -33,8 +39,21 @@ public:
     void resetRoute(int n);
 public slots:
     void resetRobot();
-    void resetRoute();
+
     void senseRobot();
+    void setLeftPower(int);
+    void setRightPower(int);
+    void resetPower();
+    void setIRHeight(int);
+
+    void resetRoute();
+    void loadRoute();
+    void saveRoute();
+
+    void setAuto(bool);
+    void setSimAccel(double);
+   protected:
+    void timerEvent(QTimerEvent *event);
 };
 
 #endif // MAINWINDOW_H
