@@ -130,30 +130,33 @@ void Robot::sense(QImage& image){
 
     float l_1 = irOffset.x();
     float l_2 = irOffset.y();
-
+    QPointF ir[6];
     QPointF ir_root = pos + QPointF(l_1 * cos(theta), -l_1 * sin(theta));
-    QPointF ir_l = ir_root - QPointF(l_2 * sin(theta), l_2 * cos(theta));
-    QPointF ir_r = ir_root + QPointF(l_2 * sin(theta), l_2 * cos(theta));
+    ir[0] = ir_root - QPointF(5*l_2 * sin(theta), 5*l_2 * cos(theta));
+    ir[1] = ir_root - QPointF(3*l_2 * sin(theta), 3*l_2 * cos(theta));
+    ir[2] = ir_root - QPointF(l_2 * sin(theta), l_2 * cos(theta));
+    ir[3] = ir_root + QPointF(l_2 * sin(theta), l_2 * cos(theta));
+    ir[4] = ir_root + QPointF(3*l_2 * sin(theta), 3*l_2 * cos(theta));
+    ir[5] = ir_root + QPointF(5*l_2 * sin(theta), 5*l_2 * cos(theta));
 
     float cR = coneRadius(h,fov);
     int i_cR = round(cR);
 
     int n = 0;
-    float sum_l=0;
-    float sum_r = 0;
+    float sum[6]={0};
 
     for(int offsetX = -i_cR; offsetX <= i_cR; ++offsetX){
         for(int offsetY = -i_cR; offsetY <= i_cR; ++offsetY){
             if((offsetX * offsetX + offsetY * offsetY) < (cR * cR)){
                 QPointF offset(offsetX, offsetY);
 
-                QRgb col_l = image.pixel((ir_l + offset).toPoint());
-                QRgb col_r = image.pixel((ir_r + offset).toPoint());
+                for (int i = 0; i < 6; ++i)
+                {
+                    QRgb col = image.pixel((ir[i] + offset).toPoint());
+                    sum[i]+= qGray(col) / 255.0;
+                }
 
-                sum_l += qGray(col_l) / 255.0;
-                sum_r += qGray(col_r) / 255.0;
                 ++n;
-
 
             }
         }
@@ -161,8 +164,13 @@ void Robot::sense(QImage& image){
 
     // set ir values
     if(n){
-        ir_val_l = sum_l / n;
-        ir_val_r = sum_r / n;
+        ir_val[0] = sum[0] / n;
+        ir_val[1] = sum[1] / n;
+        ir_val[2] = sum[2] / n;
+        ir_val[3] = sum[3] / n;
+        ir_val[4] = sum[4] / n;
+        ir_val[5] = sum[5] / n;
+        
     }
 }
 

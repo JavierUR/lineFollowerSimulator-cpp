@@ -25,7 +25,11 @@ void RobotItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
 
     painter->drawRect(QRectF(-dims/2,dims/2));
     painter->drawEllipse(QPointF(irOffset.x(), -irOffset.y()),cr,cr); // cr = cone radius
+    painter->drawEllipse(QPointF(irOffset.x(), -3*irOffset.y()),cr,cr); 
+    painter->drawEllipse(QPointF(irOffset.x(), -5*irOffset.y()),cr,cr); 
     painter->drawEllipse(irOffset,cr,cr);
+    painter->drawEllipse(QPointF(irOffset.x(), 3*irOffset.y()),cr,cr);
+    painter->drawEllipse(QPointF(irOffset.x(), 5*irOffset.y()),cr,cr);
 
 }
 

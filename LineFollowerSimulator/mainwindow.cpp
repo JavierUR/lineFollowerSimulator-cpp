@@ -83,8 +83,12 @@ void MainWindow::senseRobot(){
     painter.end();
     robot->sense(image);
 
-    ui->ir_left_edit->setText(QString::number(robot->ir_val_l));
-    ui->ir_right_edit->setText(QString::number(robot->ir_val_r));
+    ui->ir_0_edit->setText(QString::number(robot->ir_val[0]));
+    ui->ir_1_edit->setText(QString::number(robot->ir_val[1]));
+    ui->ir_2_edit->setText(QString::number(robot->ir_val[2]));
+    ui->ir_3_edit->setText(QString::number(robot->ir_val[3]));
+    ui->ir_4_edit->setText(QString::number(robot->ir_val[4]));
+    ui->ir_5_edit->setText(QString::number(robot->ir_val[5]));
 
     //std::cout << "IR VALUE : LEFT {" << robot->ir_val_l << "} , RIGHT {" << robot->ir_val_r << '}' << std::endl;
 }

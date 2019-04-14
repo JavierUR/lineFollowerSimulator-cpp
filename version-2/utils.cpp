@@ -3,7 +3,7 @@
 
 const float CM_DIMS = 256; // 256 cm x 256 cm
 
-const float PXL_DIMS = 2048; // 512 cm x 512 cm
+const float PXL_DIMS = 512; // 512 cm x 512 cm
 
 const float DT = 0.01;
 
@@ -15,11 +15,11 @@ const float ROBOT_WIDTH = c2p(16);
 const float WHEEL_DISTANCE = c2p(13.0);
 
 const float IR_OFFSETX = c2p(8);
-const float IR_OFFSETY = c2p(0.9525/2);
+const float IR_OFFSETY = c2p(4);
 
-const float IR_HEIGHT = c2p(0.3);
+const float IR_HEIGHT = c2p(2);
 
-const float IR_FOV = d2r(80);
+const float IR_FOV = d2r(60);
 
 float i2c(float in){
     // inches to cm
@@ -31,13 +31,13 @@ float c2p(float cm){
     return cm * PXL_DIMS / CM_DIMS;
 }
 
-float min(float a, float b){
+/*float min(float a, float b){
     return a<b?a:b;
 }
 
 float max(float a, float b){
     return a>b?a:b;
-}
+}*/
 
 float d2r(float d){
     return d / 180. * M_PI;
@@ -70,9 +70,9 @@ float limit(float x, float min, float max){
 }
 
 
-std::ostream& operator<<(std::ostream& os, QPointF p){
+/*std::ostream& operator<<(std::ostream& os, QPointF p){
     os << "(" << p.x() << "," << p.y() << ")";
     return os;
-}
+}*/
 
 typedef unsigned char byte;

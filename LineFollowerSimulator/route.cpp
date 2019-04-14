@@ -10,7 +10,7 @@ Route* route;
 Route::Route()
 {
     QBrush routeBrush = QBrush(QColor::fromRgb(0,0,0),Qt::SolidPattern);
-    routePen = QPen(routeBrush, c2p(1.7));
+    routePen = QPen(routeBrush, c2p(1.9));
 }
 
 void Route::reset(int n){

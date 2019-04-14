@@ -29,8 +29,8 @@ public:
     float h; // height of IR sensor, inches
     float fov; //field of view of IR sensor, radians
 
-    float ir_val_l; //value of ir reflectance sensors
-    float ir_val_r;
+    float ir_val[6]; //value of ir reflectance sensors
+
 
     // frequently computed values
     float cr; //cone radius
